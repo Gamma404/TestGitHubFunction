@@ -16,8 +16,6 @@
                     foreach (var item in Model)
                     {
                         string type = "";
-                        //這樣用會壞掉
-                        //if (item.Type == (int)(HomeController.AccountType.Income))
                         if (item.Type == 0)
                         {
                             type = "收入";
