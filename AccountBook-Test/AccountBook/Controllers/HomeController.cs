@@ -9,9 +9,6 @@ namespace AccountBook.Controllers
 {
     public class HomeController : Controller
     {
-        public enum AccountType
-        { Income, Expenture };
-
         public ActionResult Index()
         {
             return View();
@@ -25,7 +22,8 @@ namespace AccountBook.Controllers
                 new RecordOfAccountModel()
                 {
                     Id = ++index,
-                    Type = (int)AccountType.Expenture,
+                    //Type = (int)AccountType.Expenture,
+                    Type = 0,
                     Money = 50m,
                     Date = DateTime.Parse("2017-08-05"),
                     Description = "早餐-漢堡蛋＋紅茶"
@@ -33,7 +31,7 @@ namespace AccountBook.Controllers
                 new RecordOfAccountModel()
                 {
                     Id = ++index,
-                    Type = (int)AccountType.Expenture,
+                    Type = 0,
                     Money = 100m,
                     Date = DateTime.Parse("2017-08-05"),
                     Description = "午餐-雞腿便當"
@@ -41,7 +39,7 @@ namespace AccountBook.Controllers
                 new RecordOfAccountModel()
                 {
                     Id = ++index,
-                    Type = (int)AccountType.Expenture,
+                    Type = 0,
                     Money = 45m,
                     Date = DateTime.Parse("2017-08-05"),
                     Description = "文具-魔擦筆x1"
@@ -49,7 +47,7 @@ namespace AccountBook.Controllers
                 new RecordOfAccountModel()
                 {
                     Id = ++index,
-                    Type = (int)AccountType.Income,
+                    Type = 0,
                     Money = 1050m,
                     Date = DateTime.Parse("2017-08-05"),
                     Description = "7月管理委員會退費"
@@ -57,7 +55,7 @@ namespace AccountBook.Controllers
                 new RecordOfAccountModel()
                 {
                     Id = ++index,
-                    Type = (int)AccountType.Expenture,
+                    Type = 0,
                     Money = 30m,
                     Date = DateTime.Parse("2017-08-06"),
                     Description = "早餐-漢堡蛋"
@@ -65,7 +63,7 @@ namespace AccountBook.Controllers
                 new RecordOfAccountModel()
                 {
                     Id = ++index,
-                    Type = (int)AccountType.Expenture,
+                    Type = 0,
                     Money = 90m,
                     Date = DateTime.Parse("2017-08-06"),
                     Description = "午餐-排骨便當"
