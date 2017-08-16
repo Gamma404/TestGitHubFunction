@@ -22,10 +22,9 @@ namespace AccountBook.Controllers
                 new RecordOfAccountModel()
                 {
                     Id = ++index,
-                    //Type = (int)AccountType.Expenture,
                     Type = 0,
                     Money = 50m,
-                    Date = DateTime.Parse("2017-08-05"),
+                    Date = new DateTime(2017,8,5),
                     Description = "早餐-漢堡蛋＋紅茶"
                 },
                 new RecordOfAccountModel()
@@ -33,7 +32,7 @@ namespace AccountBook.Controllers
                     Id = ++index,
                     Type = 0,
                     Money = 100m,
-                    Date = DateTime.Parse("2017-08-05"),
+                    Date = new DateTime(2017,8,5),
                     Description = "午餐-雞腿便當"
                 },
                 new RecordOfAccountModel()
@@ -41,7 +40,7 @@ namespace AccountBook.Controllers
                     Id = ++index,
                     Type = 0,
                     Money = 45m,
-                    Date = DateTime.Parse("2017-08-05"),
+                    Date = new DateTime(2017,8,5),
                     Description = "文具-魔擦筆x1"
                 },
                 new RecordOfAccountModel()
@@ -49,7 +48,7 @@ namespace AccountBook.Controllers
                     Id = ++index,
                     Type = 0,
                     Money = 1050m,
-                    Date = DateTime.Parse("2017-08-05"),
+                    Date = new DateTime(2017,8,5),
                     Description = "7月管理委員會退費"
                 },
                 new RecordOfAccountModel()
@@ -57,7 +56,7 @@ namespace AccountBook.Controllers
                     Id = ++index,
                     Type = 0,
                     Money = 30m,
-                    Date = DateTime.Parse("2017-08-06"),
+                    Date = new DateTime(2017,8,5),
                     Description = "早餐-漢堡蛋"
                 },
                 new RecordOfAccountModel()
@@ -65,7 +64,7 @@ namespace AccountBook.Controllers
                     Id = ++index,
                     Type = 0,
                     Money = 90m,
-                    Date = DateTime.Parse("2017-08-06"),
+                    Date = new DateTime(2017,8,5),
                     Description = "午餐-排骨便當"
                 },
             };
