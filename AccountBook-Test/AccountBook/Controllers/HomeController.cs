@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AccountBook.Models;
 using AccountBook.Models.ViewModels;
+using AccountBook = AccountBook.Models.AccountBook;
 
 namespace AccountBook.Controllers
 {
     public class HomeController : Controller
     {
+        private SkillTreeHomeworkEntities context = new SkillTreeHomeworkEntities();
+
         public ActionResult Index()
         {
             return View();
@@ -16,58 +20,20 @@ namespace AccountBook.Controllers
 
         public ActionResult ChildActHistoryAction()
         {
-            int index = 0;
-            var accountLists = new List<RecordOfAccountModel>()
+            var accountLists = new List<RecordOfAccountModel>();
+            int i = 0;
+            foreach (var item in context.AccountBook)
             {
-                new RecordOfAccountModel()
+                var recordOfAccountModel = new RecordOfAccountModel()
                 {
-                    Id = ++index,
-                    Type = 0,
-                    Money = 50m,
-                    Date = new DateTime(2017,8,5),
-                    Description = "早餐-漢堡蛋＋紅茶"
-                },
-                new RecordOfAccountModel()
-                {
-                    Id = ++index,
-                    Type = 0,
-                    Money = 100m,
-                    Date = new DateTime(2017,8,5),
-                    Description = "午餐-雞腿便當"
-                },
-                new RecordOfAccountModel()
-                {
-                    Id = ++index,
-                    Type = 0,
-                    Money = 45m,
-                    Date = new DateTime(2017,8,5),
-                    Description = "文具-魔擦筆x1"
-                },
-                new RecordOfAccountModel()
-                {
-                    Id = ++index,
-                    Type = 0,
-                    Money = 1050m,
-                    Date = new DateTime(2017,8,5),
-                    Description = "7月管理委員會退費"
-                },
-                new RecordOfAccountModel()
-                {
-                    Id = ++index,
-                    Type = 0,
-                    Money = 30m,
-                    Date = new DateTime(2017,8,5),
-                    Description = "早餐-漢堡蛋"
-                },
-                new RecordOfAccountModel()
-                {
-                    Id = ++index,
-                    Type = 0,
-                    Money = 90m,
-                    Date = new DateTime(2017,8,5),
-                    Description = "午餐-排骨便當"
-                },
-            };
+                    Id = ++i,
+                    Type = item.Categoryyy,
+                    Date = item.Dateee,
+                    Money = item.Amounttt,
+                    Description = item.Remarkkk
+                };
+                accountLists.Add(recordOfAccountModel);
+            }
 
             return View(accountLists);
         }

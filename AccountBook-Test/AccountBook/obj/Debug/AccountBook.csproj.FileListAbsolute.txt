@@ -65,3 +65,7 @@ C:\Users\forev\Desktop\GitHub\Repos\TestGitHubFunction\AccountBook-Test\AccountB
 C:\Users\forev\Desktop\GitHub\Repos\TestGitHubFunction\AccountBook-Test\AccountBook\obj\Debug\AccountBook.csprojResolveAssemblyReference.cache
 C:\Users\forev\Desktop\GitHub\Repos\TestGitHubFunction\AccountBook-Test\AccountBook\obj\Debug\AccountBook.dll
 C:\Users\forev\Desktop\GitHub\Repos\TestGitHubFunction\AccountBook-Test\AccountBook\obj\Debug\AccountBook.pdb
+C:\Users\forev\Desktop\GitHub\Repos\TestGitHubFunction\AccountBook-Test\AccountBook\bin\EntityFramework.dll
+C:\Users\forev\Desktop\GitHub\Repos\TestGitHubFunction\AccountBook-Test\AccountBook\bin\EntityFramework.SqlServer.dll
+C:\Users\forev\Desktop\GitHub\Repos\TestGitHubFunction\AccountBook-Test\AccountBook\bin\EntityFramework.xml
+C:\Users\forev\Desktop\GitHub\Repos\TestGitHubFunction\AccountBook-Test\AccountBook\bin\EntityFramework.SqlServer.xml
