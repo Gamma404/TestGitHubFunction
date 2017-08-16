@@ -9,24 +9,14 @@
     <div class="col-md-12">
         <table class="table table-bordered table-hover">
             @{
-
                 if (Model != null)
                 {
                     int i = 1;
                     foreach (var item in Model)
                     {
-                        string type = "";
-                        if (item.Type == 0)
-                        {
-                            type = "收入";
-                        }
-                        else
-                        {
-                            type = "支出";
-                        }
                         <tr>
                             <th>@i</th>
-                            <th>@type</th>
+                            <th>@(item.Type == 0 ? "支出" : "收入")</th>
                             <th>@item.Date</th>
                             <th>@item.Description</th>
                         </tr>
