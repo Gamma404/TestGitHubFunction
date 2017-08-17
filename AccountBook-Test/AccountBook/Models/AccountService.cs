@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AccountBook.Controllers;
+using AccountBook.Models.ViewModels;
 using AccountBook.Repositories;
 
 namespace AccountBook.Models
@@ -19,10 +20,18 @@ namespace AccountBook.Models
             _accountBookRep = new Repository<AccountBook>(unitOfWork);
         }
 
-        public IEnumerable<AccountBook> Lookup()
+        public IEnumerable<RecordOfAccountModel> Lookup()
         {
             var source = _accountBookRep.LookupAll();
-            return source;
+            var result = source.Select(item => new RecordOfAccountModel()
+            {
+                Id = 0,
+                Type = item.Categoryyy,
+                Date = item.Dateee,
+                Money = item.Amounttt,
+                Description = item.Remarkkk
+            });
+            return result;
         }
     }
 }

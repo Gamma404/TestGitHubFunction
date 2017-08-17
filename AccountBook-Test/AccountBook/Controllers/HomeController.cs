@@ -27,24 +27,8 @@ namespace AccountBook.Controllers
 
         public ActionResult ChildActHistoryAction()
         {
-            int i = 0;
             var source = _acountSvc.Lookup();
-            var accountLists = new List<RecordOfAccountModel>();
-
-            foreach (var item in source)
-            {
-                var recordOfAccountModel = new RecordOfAccountModel()
-                {
-                    Id = ++i,
-                    Type = item.Categoryyy,
-                    Date = item.Dateee,
-                    Money = item.Amounttt,
-                    Description = item.Remarkkk
-                };
-                accountLists.Add(recordOfAccountModel);
-            }
-
-            return View(accountLists);
+            return View(source);
         }
 
         public ActionResult About()
