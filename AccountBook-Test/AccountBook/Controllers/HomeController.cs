@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using AccountBook.Models;
@@ -11,7 +12,12 @@ namespace AccountBook.Controllers
 {
     public class HomeController : Controller
     {
-        private SkillTreeHomeworkEntities context = new SkillTreeHomeworkEntities();
+        private readonly AccountService _acountSvc;
+
+        public HomeController()
+        {
+            _acountSvc = new AccountService();
+        }
 
         public ActionResult Index()
         {
@@ -20,9 +26,11 @@ namespace AccountBook.Controllers
 
         public ActionResult ChildActHistoryAction()
         {
-            var accountLists = new List<RecordOfAccountModel>();
             int i = 0;
-            foreach (var item in context.AccountBook)
+            var source = _acountSvc.GetSource();
+            var accountLists = new List<RecordOfAccountModel>();
+
+            foreach (var item in source)
             {
                 var recordOfAccountModel = new RecordOfAccountModel()
                 {

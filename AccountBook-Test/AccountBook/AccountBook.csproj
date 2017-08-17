@@ -171,6 +171,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountBookEF_Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountService.cs" />
     <Compile Include="Models\ViewModels\RecordOfAccountModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
