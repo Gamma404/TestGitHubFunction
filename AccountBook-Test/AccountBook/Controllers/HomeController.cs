@@ -16,7 +16,8 @@ namespace AccountBook.Controllers
 
         public HomeController()
         {
-            _acountSvc = new AccountService();
+            var unitOfWork = new EFUnitOfWork();
+            _acountSvc = new AccountService(unitOfWork);
         }
 
         public ActionResult Index()
@@ -27,7 +28,7 @@ namespace AccountBook.Controllers
         public ActionResult ChildActHistoryAction()
         {
             int i = 0;
-            var source = _acountSvc.GetSource();
+            var source = _acountSvc.Lookup();
             var accountLists = new List<RecordOfAccountModel>();
 
             foreach (var item in source)

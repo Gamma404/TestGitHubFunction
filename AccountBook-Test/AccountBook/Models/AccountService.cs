@@ -3,24 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using AccountBook.Controllers;
+using AccountBook.Repositories;
 
 namespace AccountBook.Models
 {
     public class AccountService
     {
-        private readonly SkillTreeHomeworkEntities _db;
+        private readonly IRepository<AccountBook> _accountBookRep;
+        private readonly IUnitOfWork _unitOfWork;
 
-        //private readonly Database1Entities _db;
-        public AccountService()
+        public AccountService(IUnitOfWork unitOfWork)
         {
-            _db = new SkillTreeHomeworkEntities();
-            //_db = new Database1Entities();
+            _unitOfWork = unitOfWork;
+            _accountBookRep = new Repository<AccountBook>(unitOfWork);
         }
 
-        public IEnumerable<AccountBook> GetSource()
+        public IEnumerable<AccountBook> Lookup()
         {
-            var source = from s in _db.AccountBook select s;
-
+            var source = _accountBookRep.LookupAll();
             return source;
         }
     }
